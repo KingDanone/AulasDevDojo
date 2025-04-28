@@ -5,37 +5,33 @@ import java.util.Scanner;
 
 public class CalculadorTest {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        CalculadoraInto calculadora = new CalculadoraInto();
+        Scanner sc = new Scanner(System.in);
+        CalculadoraInto obj = new CalculadoraInto();
 
+        System.out.println("ESCOLHA A OPERAÇÃO!\n 1 - soma\n 2 - subtração\n 3 - multiplicação\n 4 - divisão\nEscolha: ");
+        int operacao = sc.nextInt();
 
-        System.out.print("Digite o primeiro numero: ");
-        float num1 = input.nextFloat();
-        System.out.print("Digite o segundo numero: ");
-        float num2 = input.nextFloat();
+        System.out.print("valor: ");
+        double num1 = sc.nextDouble();
+        System.out.print("valor: ");
+        double num2 = sc.nextDouble();
 
-
-        System.out.print("Escolha uma operação: \n 1 - Soma\n 2 - Subtração\n 3 - Multiplicacao\n 4 - Divisão\nSua Escolha: ");
-        int opcao = input.nextInt();
-
-        switch (opcao) {
+        switch (operacao) {
             case 1:
-                calculadora.soma(num1, num2);
+                obj.somar(num1, num2);
                 break;
             case 2:
-                calculadora.subtracao(num1, num2);
+                obj.subtrair(num1, num2);
                 break;
             case 3:
-                calculadora.multiplicacao(num1, num2);
+                obj.multplicar(num1, num2);
                 break;
             case 4:
-                calculadora.divisao(num1, num2);
+                obj.dividir(num1, num2);
                 break;
             default:
-                System.out.println("opção invalida, tente novamente!");
+                System.out.println("erro 404");
                 break;
         }
-
     }
-
 }
