@@ -5,23 +5,28 @@ public class Funcionario {
     public int idade;
     public double[] salario;
 
-    public void imprime(){
+    public void imprime() {
         System.out.println(this.nome);
         System.out.println(this.idade);
 
-        if (this.salario != null){
-            for (int i = 0; i < this.salario.length; i++) {
-                System.out.println("Salario: " + this.salario[i]);
-            }
+        if (this.salario == null) {
+            return;
         }
 
+        for (double v : this.salario) {
+            System.out.println("Salario: " + v);
+        }
+        mediaDosSalarios();
     }
 
-    public double mediaDosSalarios(){
-        double media = 0;
-        for (int i = 0; i < this.salario.length; i++) {
-            media = media + this.salario[i];
+    private void mediaDosSalarios() {
+        if (salario == null) {
+            return;
         }
-        return media / this.salario.length;
+        double media = 0;
+        for (double v : this.salario) {
+            media += v;
+        }
+        System.out.println("Media é :" + (media / this.salario.length));
     }
 }
